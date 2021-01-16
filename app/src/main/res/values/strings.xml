@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">kun</string>
+    <string name="BuyPrice">BUY:</string>
+    <string name="SellPrice">SELL:</string>
+    <string name="InterestRate">PROFIT:</string>
+    <string name="percent">%</string>
+</resources>
