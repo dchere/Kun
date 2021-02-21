@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">kun</string>
-    <string name="BuyPrice">BUY:</string>
-    <string name="SellPrice">SELL:</string>
+    <string name="BuyPrice">BUY</string>
+    <string name="SellPrice">SELL</string>
+    <string name="CurrentPrice">CURRENT:</string>
+    <string name="Well">WELL</string>
+    <string name="Excellent">EXCELLENT</string>
     <string name="InterestRate">PROFIT:</string>
     <string name="percent">%</string>
+    <string name="pessimistic">Pessimistic</string>
+    <string name="conservative">Conservative</string>
+    <string name="optimistic">Optimistic</string>
 </resources>

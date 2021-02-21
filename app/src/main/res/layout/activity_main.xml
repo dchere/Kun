@@ -7,10 +7,243 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/RangeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:background="@drawable/buy_gradient">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text"
+                android:textColor="@color/deep_red"
+                android:text="@string/BuyPrice"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/LayoutMinOkPrice"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/MinPrice"
+                        android:textSize="@dimen/text"
+                        android:textColor="@color/deep_red"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/comment"
+                        android:textColor="@color/deep_red"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/Excellent"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/LayoutMinOkPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/MaxOkPrice">
+
+                    <TextView
+                        android:id="@+id/MinOkPrice"
+                        android:textSize="@dimen/text"
+                        android:textColor="@color/red"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/comment"
+                        android:textColor="@color/red"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/Well"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="0.5"
+            android:background="@drawable/sell_gradient">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text"
+                android:textColor="@color/deep_blue"
+                android:text="@string/SellPrice"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/LayoutMaxOkPrice"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <TextView
+                        android:id="@+id/MaxOkPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text"
+                        android:textColor="@color/blue"
+                        android:layout_gravity="center_horizontal"
+                        app:layout_constraintEnd_toStartOf="@+id/MaxPrice"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/comment"
+                        android:textColor="@color/blue"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/Well"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/LayoutMaxOkPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/MaxOkPrice">
+
+                    <TextView
+                        android:id="@+id/MaxPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text"
+                        android:textColor="@color/deep_blue"
+                        android:layout_gravity="center_horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/comment"
+                        android:textColor="@color/deep_blue"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/Excellent"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayoutSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/RangeLayout">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/buy_gradient">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:id="@+id/TempPrice1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text"
+                    android:textColor="@color/deep_red"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/TempPrice2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text"
+                    android:textColor="@color/deep_red"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/TempPrice3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text"
+                    android:textColor="@color/deep_red"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/TempPrice4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text"
+                    android:textColor="@color/deep_red"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/TempPrice5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text"
+                    android:textColor="@color/deep_red"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </LinearLayout>
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/Counter"
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="match_parent"
+                android:orientation="vertical"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:background="@drawable/sell_gradient">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/ModeSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"/>
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/TypeSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/InterestLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/LayoutSelector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="horizontal"
@@ -20,7 +253,7 @@
         android:layout_marginEnd="10dp">
 
         <TextView
-            android:layout_width="50dp"
+            android:layout_width="70dp"
             android:layout_height="40dp"
             android:gravity="left"
             android:text="@string/InterestRate"
@@ -48,7 +281,7 @@
             app:layout_constraintEnd_toEndOf="parent"/>
     </LinearLayout>
     <LinearLayout
-        android:id="@+id/SellLayout"
+        android:id="@+id/LayoutBuyPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/InterestLayout"
@@ -61,89 +294,10 @@
         android:layout_marginEnd="10dp">
 
         <TextView
-            android:layout_width="50dp"
+            android:layout_width="70dp"
             android:layout_height="40dp"
             android:gravity="left"
-            android:text="@string/SellPrice"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/SellPrice"/>
-
-        <TextView
-            android:id="@+id/SellPrice"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:textSize="20sp"
-            android:gravity="center_vertical"
-            app:layout_constraintEnd_toEndOf="parent"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/RangeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SellLayout"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp">
-
-        <TextView
-            android:id="@+id/MinPrice"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight=".25"
-            android:textSize="20sp"
-            android:textColor="#B71C1C"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintEnd_toStartOf="@+id/MinOkPrice"
-            app:layout_constraintStart_toStartOf="parent"/>
-        <TextView
-            android:id="@+id/MinOkPrice"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight=".25"
-            android:textSize="20sp"
-            android:textColor="#E53935"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintEnd_toStartOf="@+id/MaxOkPrice"/>
-        <TextView
-            android:id="@+id/MaxOkPrice"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight=".25"
-            android:textSize="20sp"
-            android:textColor="#304FFE"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintEnd_toStartOf="@+id/MaxPrice"/>
-        <TextView
-            android:id="@+id/MaxPrice"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight=".25"
-            android:textSize="20sp"
-            android:textColor="#1A237E"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintEnd_toEndOf="parent"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/RangeLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp">
-
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:gravity="left"
-            android:text="@string/BuyPrice"
+            android:text="@string/CurrentPrice"
             app:layout_constraintEnd_toStartOf="@+id/BuyPrice"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -157,6 +311,5 @@
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"/>
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
